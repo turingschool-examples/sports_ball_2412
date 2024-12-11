@@ -5,7 +5,6 @@ class Team
         @name = name
         @location = location
         @roster = []                #Roster of the players (class Player)
-
     end
 
     def add_player(new_player)
@@ -42,4 +41,19 @@ class Team
         #Refactor:
         @roster.find_all { |player| player.contract_length <= 24 }
     end
+
+    def total_value()
+        #Compute the total value of all players (based on each player's monthly cost and contract length)
+        #I feel like there's a quicker enumerable here, but .each will certainly work for now.
+        total_value = 0
+        @roster.each do |player|
+            total_value += player.monthly_cost * player.contract_length
+        end
+
+        #Refactor: I forgot I already defined a Player method to compact-ify this:
+        total_cost()
+
+        return total_value
+    end
+
 end

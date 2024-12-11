@@ -5,6 +5,7 @@ class Player
         @full_name = name
         @monthly_cost = monthly_cost
         @contract_length = contract_length
+        @nickname = nil                     #Might not have a nickname
     end
 
     def first_name()
@@ -20,6 +21,16 @@ class Player
     def total_cost()           #NOTE: I assume "costg" is intentional spelling?
         #Units for everything are in $ and months
         monthly_cost * contract_length
+    end
+
+    def nickname()
+        #Could also be accomplished w/ attr_reader
+        @nickname
+    end
+
+    def nickname!(nickname)
+        #Could also be accomplished w/ attr_accessor
+        @nickname = nickname
     end
 
 end
