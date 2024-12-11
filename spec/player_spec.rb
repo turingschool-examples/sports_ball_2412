@@ -1,12 +1,15 @@
-require './lib/player'
-require 'rspec'
+require './lib/player' #makes the player class available to the test
+require 'rspec' #connect to rspec gem
 
 #rspec spec/player_spec.rb 
 
 
 #this is the start of the test block
-RSpec.describe Player do #
-  it 'exists' do
+RSpec.describe Player do # Player is the class being tested
+  it 'exists' do #this is the first test named exists
+    #it will test if the player class exists
+    #and add arguments to the player class
+    #name = "Michael Palledorous" which is @name which is @first_name + @last_name before the .split method
     player = Player.new("Michael Palledorous", 1000000, 36)
     expect(player).to be_a Player
   end
