@@ -80,7 +80,15 @@ class Team
 
     end
 
-    # def players_by_last_name
-    #     alphabetized_by_last = roster.
-    # end
+    def players_by_last_name
+        surname = []
+
+        @roster.each do |player|
+            surname << player.last_name
+        end
+
+        surname.sort!
+        
+    end
+
 end
