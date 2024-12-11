@@ -1,6 +1,7 @@
 require './lib/player.rb'
 require './lib/team.rb'
 require 'rspec'
+require 'pry'
 
 RSpec.describe Team do
   before(:each) do
@@ -62,8 +63,10 @@ RSpec.describe Team do
     expect(@team.total_value).to eq(85200000)
   end
 
+
+  ### changed string to symbol
   it 'has deatals' do
-    expect(team.details).to eq({"total_value" => 85200000, "player_count" => 4})
+    expect(@team.details).to eq({total_value: 85200000, player_count: 4})
   end
 
   it 'averages' do
@@ -71,8 +74,8 @@ RSpec.describe Team do
   end
   
   it 'sorts players' do
-    expect(team.players_by_last_name). to eq("DeNunez, McClennan, Palledorous, Porter")
+    expect(@team.players_by_last_name). to eq("DeNunez, McClennan, Palledorous, Porter")
   end
-  
+
 end
 

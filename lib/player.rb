@@ -8,6 +8,7 @@ class Player
     @monthly_cost = monthly_cost
     @contract_length = contract_length
     @nickname = ()
+
   end
 
   def first_name
