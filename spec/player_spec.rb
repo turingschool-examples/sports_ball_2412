@@ -26,7 +26,7 @@ RSpec.describe Player do # Player is the class being tested
 
   it 'has a monthly cost' do
     player = Player.new("Michael Palledorous", 1000000, 36)
-    expect(player.monthly_cost).to eq(1000000)
+    expect(player.monthly_cost).to eq(1000000) #testing the monthly cost method on the player class
   end
 
   it 'has a contract length' do
@@ -40,8 +40,8 @@ RSpec.describe Player do # Player is the class being tested
   end
 
   it 'can add a player to a team' do
-    team = Team.new("Dodgers", "Los Angeles")
-    player = Player.new("Michael Palledorous", 1000000, 36)
+    team = Team.new("Dodgers", "Los Angeles") #new instance of team class with 2 arguments
+    player = Player.new("Michael Palledorous", 1000000, 36) #new instance of player class with 3 arguments
     team.add_player(player)
   end
 end
