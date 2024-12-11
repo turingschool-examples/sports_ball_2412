@@ -51,47 +51,49 @@ class Team
             total_value += player.total_cost()
         end
 
-        #Refactor: I forgot I already defined a Player method to compact-ify this:
-        #total_cost()
-
         return total_value
     end
 
     def details()
         #Generate hash of total roster value and # of players
+        
         #NOTE: can probably refactor this significantly (at least to make more compact, if nothing else)
-        details_hash = {}
+        # details_hash = {}
 
-        details_hash["total_value"] = total_value()
-        details_hash["player_count"] = player_count()
+        # details_hash["total_value"] = total_value()
+        # details_hash["player_count"] = player_count()
 
-        return details_hash
+        # return details_hash
+
+        #Refactor:
+        { "total_value" => total_value(), "player_count" => player_count() }
     end
 
     def average_cost_of_player()
-        total_value() / player_count
+        total_value() / player_count()
     end
 
     def players_by_last_name()
         #Probably the trickiest method here; need to extract last names, sort alphabetically, and concatenate into one string
+        
         last_name_array = []
         @roster.each do |player|
             last_name_array << player.last_name()
         end
 
-        #Need to use sort_by enumerable.  I'm not an expert on this, but I think I have the syntax right for this situation:
-        #Looks like a simple sort enumerable will work here (assumes alphabetical for strings I think)
+        #Looks like a simple sort enumerable will work here (assumes alphabetical for strings I think...otherwise I might need sort_by)
         sorted_name_array = last_name_array.sort
         
         #Now concatenate a single string from the array.  Again, I feel like there's a method / enumerable for this purpose...
-        sorted_last_names_string = ""
-        sorted_name_array.each do |name_element|
-            sorted_last_names_string += "#{name_element}, "
-        end
-        #Remove extra characters ", " at end:
-        return sorted_last_names_string.delete_suffix(", ")
+        # sorted_last_names_string = ""
+        # sorted_name_array.each do |name_element|
+        #     sorted_last_names_string += "#{name_element}, "
+        # end
+        # #Remove extra characters ", " at end:
+        # return sorted_last_names_string.delete_suffix(", ")
 
-        # return last_name_array
+        #Aha - there is a quicker way (of course there is)!
+        return sorted_name_array.join(", ")                 #join concatenates each element with the ", " separator between 'em
     end
 
 end

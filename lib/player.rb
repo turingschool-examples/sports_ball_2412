@@ -18,7 +18,7 @@ class Player
         (@full_name.split())[1]
     end
 
-    def total_cost()           #NOTE: I assume "costg" is intentional spelling?
+    def total_cost()
         #Units for everything are in $ and months
         monthly_cost * contract_length
     end

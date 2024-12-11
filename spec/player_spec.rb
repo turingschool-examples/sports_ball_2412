@@ -3,6 +3,8 @@ require './lib/player.rb'
 require 'pry'                 #Just for testing / other verifying interaction pattern
 
 RSpec.describe Player do
+  #Next time I can use the before(:each) approach - did this in team_spec.rb
+  
   it 'exists' do
     player = Player.new("Michael Palledorous" , 1000000, 36)
     
