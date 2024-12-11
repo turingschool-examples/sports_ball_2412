@@ -76,7 +76,7 @@ class Team
 
     def average_cost_of_player
 
-        average_cost = "$" + (total_value / player_count).to_s
+        average_cost = "$" + ((total_value / player_count).to_s).gsub(/\B(?=(...)*\b)/, ',')
 
     end
 
@@ -87,8 +87,8 @@ class Team
             surname << player.last_name
         end
 
-        surname.sort!
-        
+        surname.sort! * ", "
+
     end
 
 end
