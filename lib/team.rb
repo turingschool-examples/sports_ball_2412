@@ -16,4 +16,18 @@ class Team
     return roster.length
   end
 
+  def long_term_players
+    return roster.select {|player| player.contract_length > 24}
+  end
+
+  def short_term_players
+    return roster.select {|player| player.contract_length <= 24}
+  end
+
+  def total_value
+    payroll = 0
+    roster.each {|player| payroll += player.total_costg}
+    return payroll
+  end
+
 end
