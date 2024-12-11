@@ -3,7 +3,7 @@
 require 'rspec'
 require_relative '../lib/player'
 
-RSpec.describe Player do
+describe Player do
   it 'exists' do
     player = described_class.new('Michael Palledorous', 1_000_000, 36)
 
