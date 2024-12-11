@@ -13,11 +13,15 @@ class Team
     @roster = []
   end
 
+  def add_player(player)
+    @roster << player
+  end
+
   def player_count
     @roster.count
   end
 
-  def add_player(player)
-    @roster << player
+  def to_s
+    "Team: #{@name}, Location: #{@location}"
   end
 end
