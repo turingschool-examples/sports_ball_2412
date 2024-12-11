@@ -1,7 +1,7 @@
 class Player
   attr_reader :first_name, :last_name, :monthly_cost, :contract_length, :total_cost, :nickname
 
-  def initialize(full_name, monthly_cost, contract_length)
+  def initialize(full_name, monthly_cost, contract_length, nickname)
     @full_name = full_name
     @monthly_cost = monthly_cost
     @contract_length = contract_length
