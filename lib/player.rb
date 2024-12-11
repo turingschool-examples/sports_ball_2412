@@ -13,4 +13,12 @@ class Player
     return monthly_cost * contract_length
   end
 
+  def nickname
+    return @nickname
+  end
+
+  def set_nickname!(name)
+    @nickname = name
+  end
+
 end
