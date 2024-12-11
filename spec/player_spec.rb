@@ -38,4 +38,10 @@ RSpec.describe Player do # Player is the class being tested
     player = Player.new("Michael Palledorous", 1000000, 36)
     expect(player.total_cost).to eq(36000000)
   end
+
+  it 'can add a player to a team' do
+    team = Team.new("Dodgers", "Los Angeles")
+    player = Player.new("Michael Palledorous", 1000000, 36)
+    team.add_player(player)
+  end
 end

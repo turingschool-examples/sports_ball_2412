@@ -16,4 +16,8 @@ class Player
   def total_cost
     @monthly_cost * @contract_length
   end
+
+  def add_player(player)
+    @roster << player
+end
 end
