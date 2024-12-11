@@ -30,4 +30,23 @@ class Team
     return payroll
   end
 
+  def details
+    team_details = {
+      "total_value" => self.total_value,
+      "player_count" => self.player_count
+    }
+    return team_details
+  end
+
+  def average_cost_of_player
+    average_cost = (self.total_value / self.player_count)
+    return "$#{average_cost}"
+  end
+
+  def players_by_last_name
+    last_names = []
+    roster.each {|player| last_names << player.last_name}
+    return last_names.sort.join(", ")
+  end
+
 end
