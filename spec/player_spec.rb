@@ -1,4 +1,5 @@
 require 'rspec'
+require './lib/player.rb'
 
 RSpec.describe Player do
   it 'exists' do
