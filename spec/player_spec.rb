@@ -47,7 +47,7 @@ RSpec.describe Player do
   it 'can have a nickname' do
     player = Player.new("Michael Palledorous" , 1000000, 36)
 
-    player.set_nickname("Squints")
+    player.set_nickname!("Squints")
 
     expect(player.nickname).to eq("Squints")
   end

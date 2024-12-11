@@ -11,7 +11,7 @@ class Player
         @last_name = names.last
     end
 
-    def set_nickname(nickname)
+    def set_nickname!(nickname)
         @nickname = nickname
     end
 end
