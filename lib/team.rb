@@ -39,8 +39,9 @@ class Team
   end
 
   def average_cost_of_player
-    average_cost = (self.total_value / self.player_count)
-    return "$#{average_cost}"
+    avg_cost = (self.total_value / self.player_count)
+    avg_cost_commas = avg_cost.to_s.chars.to_a.reverse.each_slice(3)
+    return avg_cost_commas.map{|x| x.join}.join(',').reverse.insert(0, "$")
   end
 
   def players_by_last_name

@@ -107,7 +107,7 @@ describe Team do
     team.add_player(player_2)
     team.add_player(player_3)
     team.add_player(player_4)
-    expect(team.average_cost_of_player).to eq("$21300000")
+    expect(team.average_cost_of_player).to eq("$21,300,000")
   end
 
   it 'can present players by last name' do
