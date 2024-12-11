@@ -1,7 +1,7 @@
 
 
 class Player
-  attr_accessor :name, :monthly_cost, :contract_length, :total_costg
+  attr_accessor :name, :monthly_cost, :contract_length
 
   def initialize(name, monthly_cost, contract_length)
     @name = name

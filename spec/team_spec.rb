@@ -51,11 +51,11 @@ RSpec.describe Team do
     @team.add_player(@player_4)
   end
   it 'has long term players' do
-    expect(@team.long_term_players).to eq([@player_1, @player_2])
+    expect(@team.long_term_players).to eq([@player_1, @player_3])
   end
 
   it 'has short term players' do
-    expect(@team.short_term_players).to eq([@player_3, @player_4])
+    expect(@team.short_term_players).to eq([@player_2, @player_4])
   end
 
   it 'has payroll' do
