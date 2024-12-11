@@ -1,4 +1,6 @@
 require 'rspec'
+require './lib/player.rb'
+require 'pry'                 #Just for testing / other verifying interaction pattern
 
 RSpec.describe Player do
   it 'exists' do
@@ -33,7 +35,7 @@ RSpec.describe Player do
 
   it 'has a total cost' do
     player = Player.new("Michael Palledorous" , 1000000, 36)
-
-    expect(player.total_costg).to eq(36000000)
+    #NOTE: I assume "total_costg" was intentionally misspelled (based on README and interaction pattern expectation)
+    expect(player.total_cost).to eq(36000000)
   end
 end
