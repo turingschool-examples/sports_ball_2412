@@ -16,4 +16,8 @@ class Team
     def long_term_players
         @roster.find_all {|player| player.contract_length > 24}
     end
+
+    def short_term_players
+        @roster.find_all {|player| player.contract_length <= 24}
+    end
 end
