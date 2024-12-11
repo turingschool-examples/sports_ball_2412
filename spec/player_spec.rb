@@ -35,6 +35,6 @@ RSpec.describe Player do
   it 'has a total cost' do
     player = Player.new("Michael Palledorous" , 1000000, 36)
 
-    expect(player.total_costg).to eq(36000000)
+    expect(player.total_cost).to eq(36000000)
   end
 end
