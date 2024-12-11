@@ -90,4 +90,49 @@ describe Team do
 
     expect(team.total_value).to eq(85_200_000)
   end
+
+  it 'can get details' do
+    team = described_class.new('Dodgers', 'Los Angeles')
+    player1 = Player.new('Michael Palledorous', 1_000_000, 36)
+    player2 = Player.new('Kenny DeNunez', 500_000, 24)
+    player3 = Player.new('Alan McClennan', 750_000, 48)
+    player4 = Player.new('Hamilton Porter', 100_000, 12)
+
+    team.add_player(player1)
+    team.add_player(player2)
+    team.add_player(player3)
+    team.add_player(player4)
+
+    expect(team.details).to eq({ 'total_value' => 85_200_000, 'player_count' => 4 })
+  end
+
+  it 'can get average cost of player' do
+    team = described_class.new('Dodgers', 'Los Angeles')
+    player1 = Player.new('Michael Palledorous', 1_000_000, 36)
+    player2 = Player.new('Kenny DeNunez', 500_000, 24)
+    player3 = Player.new('Alan McClennan', 750_000, 48)
+    player4 = Player.new('Hamilton Porter', 100_000, 12)
+
+    team.add_player(player1)
+    team.add_player(player2)
+    team.add_player(player3)
+    team.add_player(player4)
+
+    expect(team.average_cost_of_player).to eq('$21,300,000')
+  end
+
+  it 'can sort by last name' do
+    team = described_class.new('Dodgers', 'Los Angeles')
+    player1 = Player.new('Michael Palledorous', 1_000_000, 36)
+    player2 = Player.new('Kenny DeNunez', 500_000, 24)
+    player3 = Player.new('Alan McClennan', 750_000, 48)
+    player4 = Player.new('Hamilton Porter', 100_000, 12)
+
+    team.add_player(player1)
+    team.add_player(player2)
+    team.add_player(player3)
+    team.add_player(player4)
+
+    expect(team.players_by_last_name).to eq([player4, player1, player3, player2])
+  end
 end
