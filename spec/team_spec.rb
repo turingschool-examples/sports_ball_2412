@@ -126,6 +126,8 @@ describe Team do
     end
 
     it 'can fetch the last name of every player' do
+        team = Team.new("Dodgers", "Los Angeles")
+        
         player_1 = Player.new("Michael Palledorous" , 1000000, 36)
         player_2 = Player.new("Kenny DeNunez", 500000, 24)
         player_3 = Player.new("Alan McClennan", 750000, 48)
