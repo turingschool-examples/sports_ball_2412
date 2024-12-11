@@ -20,7 +20,7 @@ replaced any attributes with `...` for readability.)
 Notes: Contract length is in months, and the total cost is the contract length multiplied by the monthly cost.
 
 ```ruby
-pry(main)> require './lib/player'
+pry(main)> require git 
 #=> true
 
 pry(main)> player = Player.new("Michael Palledorous" , 1000000, 36)
