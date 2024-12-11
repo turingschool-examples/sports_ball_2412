@@ -34,6 +34,7 @@ class Team
         total_value: @roster.sum {|contract| contract.total_costg},
         player_count: @roster.length
       }
+      return details
     end
 
     def average_cost_of_player

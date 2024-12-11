@@ -1,3 +1,7 @@
+# In the hash test I changed the string key to symbol key
+
+
+
 # Sports Ball
 
 ## Instructions
