@@ -28,7 +28,7 @@ class Player
         @nickname
     end
 
-    def nickname!(nickname)
+    def set_nickname!(nickname)
         #Could also be accomplished w/ attr_accessor
         @nickname = nickname
     end
