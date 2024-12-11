@@ -47,4 +47,5 @@ RSpec.describe Player do
 
     expect(player.nickname).to eq("Squints")
   end
+  
 end
