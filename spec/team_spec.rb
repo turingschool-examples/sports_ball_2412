@@ -35,10 +35,32 @@ RSpec.describe Team do
         expect(@team.roster).to eq([@player_1, @player_2])
     end
 
-    it 'can count the player in the roster' do 
+    it 'can count the players in the roster' do 
         @team.add_player(@player_1)
         @team.add_player(@player_2)
 
         expect(@team.player_count).to eq(2)
+    end
+
+    it 'records and returns the players with long term contracts' do
+        @team.add_player(@player_1)
+        @team.add_player(@player_2)
+        @team.add_player(@player_3)
+        @team.add_player(@player_4)
+
+        expect(@team.roster).to eq([@player_1, @player_2, @player_3, @player_4])
+        expect(@team.player_count).to eq(4)
+        expect(@team.long_term_players).to eq([@player_1, @player_3])
+    end
+
+    it 'records and returns the players with short term contracts' do
+        @team.add_player(@player_1)
+        @team.add_player(@player_2)
+        @team.add_player(@player_3)
+        @team.add_player(@player_4)
+
+        expect(@team.roster).to eq([@player_1, @player_2, @player_3, @player_4])
+        expect(@team.player_count).to eq(4)
+        expect(@team.short_term_players).to eq([@player_2, @player_4])
     end
 end
