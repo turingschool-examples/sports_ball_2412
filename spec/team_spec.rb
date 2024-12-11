@@ -103,4 +103,68 @@ RSpec.describe Team do
         expect(@team.total_value()).to eq(85200000)
     end
 
+    it 'team: has specific properties / details' do
+        player_1 = Player.new("Michael Palledorous", 1000000, 36)
+        player_2 = Player.new("Kenny DeNunez", 500000, 24)
+        player_3 = Player.new("Alan McClennan", 750000, 48)
+        player_4 = Player.new("Hamilton Porter", 100000, 12)
+
+        @team.add_player(player_1)
+        @team.add_player(player_2)
+        @team.add_player(player_3)
+        @team.add_player(player_4)
+
+        #Could make more compact on expect() line, but expanding to make cleaner for now
+        details_hash = {
+            "total_value" => 85200000,
+            "player_count" => 4
+        }
+        expect(@team.details()).to eq(details_hash)
+    end
+
+    it 'team: can calculate average cost per player' do
+        player_1 = Player.new("Michael Palledorous", 1000000, 36)
+        player_2 = Player.new("Kenny DeNunez", 500000, 24)
+        player_3 = Player.new("Alan McClennan", 750000, 48)
+        player_4 = Player.new("Hamilton Porter", 100000, 12)
+
+        @team.add_player(player_1)
+        @team.add_player(player_2)
+        @team.add_player(player_3)
+        @team.add_player(player_4)
+
+        expect(@team.average_cost_of_player()).to eq(21300000)
+
+    end
+
+    #NOTE: Making one intermediate test to check PARTIAL functionality of players_by_last_name
+    it 'team: can return array of all players last names' do
+        player_1 = Player.new("Michael Palledorous", 1000000, 36)
+        player_2 = Player.new("Kenny DeNunez", 500000, 24)
+        player_3 = Player.new("Alan McClennan", 750000, 48)
+        player_4 = Player.new("Hamilton Porter", 100000, 12)
+
+        @team.add_player(player_1)
+        @team.add_player(player_2)
+        @team.add_player(player_3)
+        @team.add_player(player_4)
+
+        #Aside: can I teach VS Code to interpret the array shorthand below correctly in terms of colors, etc?
+        expect(@team.players_by_last_name()).to eq(%w[Palledorous DeNunez McClennan Porter])
+    end
+
+    xit 'team: can list player roster by only last name, alphabetized' do
+        player_1 = Player.new("Michael Palledorous", 1000000, 36)
+        player_2 = Player.new("Kenny DeNunez", 500000, 24)
+        player_3 = Player.new("Alan McClennan", 750000, 48)
+        player_4 = Player.new("Hamilton Porter", 100000, 12)
+
+        @team.add_player(player_1)
+        @team.add_player(player_2)
+        @team.add_player(player_3)
+        @team.add_player(player_4)
+
+        expect(@team.players_by_last_name()).to eq("DeNunez, McClennan, Palledorous, Porter")
+    end
+
 end
