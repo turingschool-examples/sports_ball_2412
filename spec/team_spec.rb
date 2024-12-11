@@ -61,4 +61,18 @@ RSpec.describe Team do
   it 'has payroll' do
     expect(@team.total_value).to eq(85200000)
   end
+
+  it 'has deatals' do
+    expect(team.details).to eq({"total_value" => 85200000, "player_count" => 4})
+  end
+
+  it 'averages' do
+    expect(@team.average_cost_of_player).to eq("$21,300,000")
+  end
+  
+  it 'sorts players' do
+    expect(team.players_by_last_name). to eq("DeNunez, McClennan, Palledorous, Porter")
+  end
+  
 end
+
