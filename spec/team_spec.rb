@@ -14,13 +14,13 @@ RSpec.describe Team do
         expect(@team).to be_a(Team)
     end
 
+    #Not testing team name and location validity, as it does not appear in interaction pattern
+    #and I don't define methods for them
+
     it 'team: has a roster' do
         # expect(@team.name).to eq()
         expect(@team.roster).to eq([])
     end
-
-    #Not testing team name and location validity, as it does not appear in interaction pattern
-    #and I don't define methods for them
 
     it 'team: has correct number of players in empty roster' do
         expect(@team.player_count()).to eq(0)
@@ -30,21 +30,47 @@ RSpec.describe Team do
         player_1 = Player.new("Michael Palledorous", 1000000, 36)
         player_2 = Player.new("Kenny DeNunez", 500000, 24)
 
-        team.add_player(player_1)
-        team.add_player(player_2)
+        @team.add_player(player_1)
+        @team.add_player(player_2)
 
         #Not sure how to exactly check the full contents of the array...
-        expect(team.roster).to eq([player_1.object_id, player_2.object_id])
+        #Doing object IDs is tricky, this line doesn't quite work:
+        # expect(@team.roster).to eq([player_1.object_id, player_2.object_id])
+        #This should suffice for now; just check each element
+        expect(@team.roster[0].object_id).to eq(player_1.object_id)
+        expect(@team.roster[1].object_id).to eq(player_2.object_id)
     end
 
     it 'team: has correct number of players in full roster' do
         player_1 = Player.new("Michael Palledorous", 1000000, 36)
         player_2 = Player.new("Kenny DeNunez", 500000, 24)
 
-        team.add_player(player_1)
-        team.add_player(player_2)
+        @team.add_player(player_1)
+        @team.add_player(player_2)
 
-        expect(team.player_count()).to eq(2)
+        expect(@team.player_count()).to eq(2)
+    end
+
+    it 'team: has correct number of long-term players' do
+        player_1 = Player.new("Michael Palledorous", 1000000, 36)
+        player_2 = Player.new("Kenny DeNunez", 500000, 24)
+        player_3 = Player.new("Alan McClennan", 750000, 48)
+        player_4 = Player.new("Hamilton Porter", 100000, 12)
+
+        @team.add_player(player_1)
+        @team.add_player(player_2)
+        @team.add_player(player_3)
+        @team.add_player(player_4)
+        
+        #Based on interaction pattern, I assume "long-term" means > 24 months
+        #Verify full array of long-term players:
+        long_term_roster = @team.long_term_players()
+        expect(@team.long_term_roster[0].object_id).to eq(player_1.object_id)
+        expect(@team.long_term_roster[0].object_id).to eq(player_1.object_id)
+    end
+
+    it 'team: has correct number of short-term players' do
+
     end
 
 end
