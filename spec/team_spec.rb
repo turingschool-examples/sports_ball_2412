@@ -23,7 +23,7 @@ RSpec.describe Team do
     end
     
     
-    it "has a roster of players" do
+    it "adds players to the roster, roster has players" do
     team = Team.new("Dodgers", "Los Angeles")
     player_1 = Player.new("Michael Palledorous",1000000, 36)
     player_2 = Player.new("Kenny DeNunez", 500000, 24)
