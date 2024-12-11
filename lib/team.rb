@@ -8,18 +8,25 @@ class Team
     end
 
     def roster
+
         @roster
+
     end
 
     def player_count
+
         @roster.length
+
     end
 
     def add_player(player)
+
         @roster << player
+
     end
 
     def long_term_players
+
         long_term_players = []
 
         roster.find_all do |player|
@@ -33,6 +40,7 @@ class Team
     end
 
     def short_term_players
+
         short_term_players = []
 
         roster.find_all do |player|
@@ -46,6 +54,7 @@ class Team
     end
 
     def total_value
+
         cost_array = []
 
         roster.each do |player|
@@ -57,6 +66,7 @@ class Team
     end
 
     def details
+
         details = {}
         details["total_value"] = total_value
         details["player_count"] = player_count
@@ -64,9 +74,11 @@ class Team
         details
     end
 
-    # def average_cost_of_player
+    def average_cost_of_player
 
-    # end
+        average_cost = "$" + (total_value / player_count).to_s
+
+    end
 
     # def players_by_last_name
     #     alphabetized_by_last = roster.
