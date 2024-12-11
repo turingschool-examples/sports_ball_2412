@@ -27,4 +27,11 @@ class Team
         @roster.each {|player| value += player.total_cost}
         value
     end
+
+    def deatils
+        {
+            "total_value" => total_value,
+            "player_count" => player_count
+        }
+    end
 end
