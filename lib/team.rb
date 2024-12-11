@@ -11,11 +11,11 @@ class Team
         @roster
     end
 
-    # def player_count
+    def player_count
+        @roster.length
+    end
 
-    # end
-
-    # def add_player
-
-    # end
+    def add_player(player)
+        @roster << player
+    end
 end
