@@ -42,6 +42,17 @@ class Team
         end
 
         short_term_players
+
+    end
+
+    def total_value
+        cost_array = []
+
+        roster.each do |player|
+            cost_array << player.total_cost
+        end
+
+        cost_array.sum
         
     end
 end
