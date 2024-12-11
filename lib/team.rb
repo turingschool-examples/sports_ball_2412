@@ -76,10 +76,13 @@ class Team
     def players_by_last_name()
         #Probably the trickiest method here; need to extract last names, sort alphabetically, and concatenate into one string
         
-        last_name_array = []
-        @roster.each do |player|
-            last_name_array << player.last_name()
-        end
+        # last_name_array = []
+        # @roster.each do |player|
+        #     last_name_array << player.last_name()
+        # end
+
+        #Refactor:
+        last_name_array = @roster.map { |player| player.last_name() }
 
         #Looks like a simple sort enumerable will work here (assumes alphabetical for strings I think...otherwise I might need sort_by)
         sorted_name_array = last_name_array.sort
@@ -92,7 +95,7 @@ class Team
         # #Remove extra characters ", " at end:
         # return sorted_last_names_string.delete_suffix(", ")
 
-        #Aha - there is a quicker way (of course there is)!
+        #Refactor: Aha - there is a quicker way (of course there is)!
         return sorted_name_array.join(", ")                 #join concatenates each element with the ", " separator between 'em
     end
 
