@@ -35,6 +35,8 @@ class Team
   end
 
   def average_cost_of_player
+    return '$0' if @roster.empty?
+
     "$#{(total_value / player_count).to_s.chars.reverse.each_slice(3).map(&:join).join(',').reverse}"
   end
 
