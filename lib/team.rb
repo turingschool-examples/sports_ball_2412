@@ -34,4 +34,17 @@ class Team
             "player_count" => player_count
         }
     end
+
+    def average_cost_of_player
+        value_array = (total_value/player_count).to_s.split('').reverse()
+        value_string = ""
+
+        value_array.size.times do |index|
+            if (index) % 4 == 0
+                value_array.insert(index + 3, ',')
+            end
+        end
+        value_array.reverse.each {|char| value_string << char}
+        "$#{value_string}"
+    end
 end
