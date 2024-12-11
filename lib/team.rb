@@ -40,6 +40,7 @@ class Team
         value_string = ""
 
         value_array.size.times {|index| value_array.insert(index + 3, ',') if index % 4 == 0}
+        value_array.pop if value_array.last == ','
         
         value_array.reverse.each {|char| value_string << char}
         "$#{value_string}"
