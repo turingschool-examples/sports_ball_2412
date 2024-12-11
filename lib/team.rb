@@ -24,8 +24,5 @@ class Team
 
   def to_s
     "Team: #{@name}, Location: #{@location}"
-    #string interpolation to display the team name and location
-    #"Team: will display the team name and location"
-    #based on the name and location passed to the initialize method of the team class
   end
 end
