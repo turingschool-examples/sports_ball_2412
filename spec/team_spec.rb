@@ -51,7 +51,7 @@ RSpec.describe Team do
         expect(@team.player_count()).to eq(2)
     end
 
-    it 'team: has correct number of long-term players' do
+    it 'team: has correct list of long-term players' do
         player_1 = Player.new("Michael Palledorous", 1000000, 36)
         player_2 = Player.new("Kenny DeNunez", 500000, 24)
         player_3 = Player.new("Alan McClennan", 750000, 48)
@@ -65,12 +65,27 @@ RSpec.describe Team do
         #Based on interaction pattern, I assume "long-term" means > 24 months
         #Verify full array of long-term players:
         long_term_roster = @team.long_term_players()
-        expect(@team.long_term_roster[0].object_id).to eq(player_1.object_id)
-        expect(@team.long_term_roster[0].object_id).to eq(player_1.object_id)
+        expect(long_term_roster[0].object_id).to eq(player_1.object_id)
+        expect(long_term_roster[1].object_id).to eq(player_3.object_id)
     end
 
-    it 'team: has correct number of short-term players' do
+    it 'team: has correct list of short-term players' do
+        #So much repetition, but isn't always used (hence why I didn't put it in before(:each))
+        player_1 = Player.new("Michael Palledorous", 1000000, 36)
+        player_2 = Player.new("Kenny DeNunez", 500000, 24)
+        player_3 = Player.new("Alan McClennan", 750000, 48)
+        player_4 = Player.new("Hamilton Porter", 100000, 12)
 
+        @team.add_player(player_1)
+        @team.add_player(player_2)
+        @team.add_player(player_3)
+        @team.add_player(player_4)
+        
+        #Based on interaction pattern, I assume "long-term" means > 24 months
+        #Verify full array of long-term players:
+        short_term_roster = @team.short_term_players()
+        expect(short_term_roster[0].object_id).to eq(player_2.object_id)
+        expect(short_term_roster[1].object_id).to eq(player_4.object_id)
     end
 
 end
