@@ -1,5 +1,5 @@
 class Team
-    attr_reader :roster, :player_count
+    attr_reader :roster
 
     def initialize(name, city)
         @roster = []
