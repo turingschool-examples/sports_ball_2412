@@ -39,4 +39,18 @@ describe Player do
 
     expect(player.total_cost).to eq(36_000_000)
   end
+
+  it 'has no nickname by default' do
+    player = described_class.new('Michael Palledorous', 1_000_000, 36)
+
+    expect(player.nickname).to be_nil
+  end
+
+  it 'can add a nickname' do
+    player = described_class.new('Michael Palledorous', 1_000_000, 36)
+
+    player.set_nickname!('Squints')
+
+    expect(player.nickname).to eq('Squints')
+  end
 end
