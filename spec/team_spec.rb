@@ -141,7 +141,7 @@ describe Team do
         expect(team.players_by_last_name).to eq("DeNunez, McClennan, Palledorous, Porter")
     end
 
-    it 'can get the average cost of a player when cost is low' do
+    it 'can handle average player costs with digits divisble by 3' do
         team = Team.new("Dodgers", "Los Angeles")
 
         player_1 = Player.new("Michael Palledorous" , 10, 36)
