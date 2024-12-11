@@ -22,6 +22,10 @@ class Team
     #.count method to count the number of players in the roster
   end
 
+  def players
+    @roster
+  end
+
   def to_s
     "Team: #{@name}, Location: #{@location}"
   end
