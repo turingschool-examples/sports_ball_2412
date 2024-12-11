@@ -1,23 +1,28 @@
-# Player class represents an individual player with attributes such as name, contract details, and optional nickname.
+# class represents an individual player in a sports team
 class Player
+  # These attributes allow external access to player details
   attr_reader :first_name, :last_name, :monthly_cost, :contract_length, :nickname
 
-  # Initialize a new player with full name, monthly cost, and contract length (in months).
-  # The full name is split into first and last names.
+  # Initializes a new Player object with their name, monthly cost, and contract length
   def initialize(full_name, monthly_cost, contract_length)
-    @first_name, @last_name = full_name.split # Splits the full name into first and last name.
-    @monthly_cost = monthly_cost             # Monthly cost of the player's contract.
-    @contract_length = contract_length       # Length of the contract in months.
-    @nickname = nil                          # Players start w/o a nickname.
+    # Split full name into first and last names
+    @first_name, @last_name = full_name.split
+    # Monthly cost of player's contract
+    @monthly_cost = monthly_cost
+    # Length of player's contract in months
+    @contract_length = contract_length
+    # Player starts with no nickname
+    @nickname = nil
   end
 
-  # Calculate total cost of the player's contract.
+  # Calculates total cost of the player's contract
   def total_cost
     @monthly_cost * @contract_length
   end
 
-  # Assign a nickname to the player.
+  # Assigns a nickname to the player
   def set_nickname!(nickname)
     @nickname = nickname
   end
 end
+
