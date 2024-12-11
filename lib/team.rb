@@ -47,4 +47,11 @@ class Team
         value_array.reverse.each {|char| value_string << char}
         "$#{value_string}"
     end
+
+    def players_by_last_name
+        last_names_string = ""
+        last_names = @roster.map {|player| player.last_name}.sort 
+        last_names.each {|name| last_names_string << "#{name}, "}
+        last_names_string.chop.chop
+    end
 end
