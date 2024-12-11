@@ -53,6 +53,22 @@ class Team
         end
 
         cost_array.sum
-        
+
     end
+
+    def details
+        details = {}
+        details["total_value"] = total_value
+        details["player_count"] = player_count
+
+        details
+    end
+
+    # def average_cost_of_player
+
+    # end
+
+    # def players_by_last_name
+    #     alphabetized_by_last = roster.
+    # end
 end
