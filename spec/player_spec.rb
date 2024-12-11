@@ -1,10 +1,11 @@
 require 'rspec'
+require './lib/player'
 
 RSpec.describe Player do
   it 'exists' do
     player = Player.new("Michael Palledorous" , 1000000, 36)
     
-    expect(player).to be_a Player
+    expect(player).to be_an_instance_of(Player)
   end
 
   it 'has a first name' do
@@ -13,7 +14,7 @@ RSpec.describe Player do
     expect(player.first_name).to eq("Michael")
   end
 
-  it 'has a last name' do
+ it 'has a last name' do
     player = Player.new("Michael Palledorous" , 1000000, 36)
 
     expect(player.last_name).to eq("Palledorous")
