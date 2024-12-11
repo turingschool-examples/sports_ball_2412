@@ -20,4 +20,11 @@ class Team
     def short_term_players
         @roster.find_all {|player| player.contract_length <= 24}
     end
+
+    def total_value
+        value = 0
+
+        @roster.each {|player| value += player.total_cost}
+        value
+    end
 end
