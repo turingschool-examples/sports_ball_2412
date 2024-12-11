@@ -1,8 +1,8 @@
 require './lib/player'
 
 class Team
-    attr_reader :team, :city
-
+    attr_reader :team, :city 
+    attr_accessor :long_term_players, :short_term_players
     def initialize(team, city)
         @team = []
         @city = city
@@ -24,17 +24,21 @@ class Team
     end
 
     def long_term_players(player)
-        
-            if player(@contract_length) > 24
-                @long_term_players << player
+        @team.length.times do |check|
+            check.player.each.contract_length
+                if contract_length > 24
+                    @long_term_players << player
+                end
             end
-        end
+    end
 
     def short_term_players
-        short_term_player = Player(@name, @monthly_cost, @contract_length)
-        if short_term_player[2] <= 24
-            @short_term_players << short_term_player
-        end
+
+        @short_term_players << short_term_player
+        
+    end
+
+    def total_value
     end
 end
 
