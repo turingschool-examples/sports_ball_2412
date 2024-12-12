@@ -45,7 +45,9 @@ class Team
   end
 
   def total_value
-    @roster.sum(&:total_cost)
+    @roster.sum do |player|
+      player.total_cost
+    end
   end
 end
 

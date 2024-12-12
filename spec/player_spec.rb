@@ -1,6 +1,7 @@
-require './lib/player'
 require 'rspec'
 require 'pry'
+require './lib/player'
+require './lib/team'
 
 RSpec.describe Player do
   it 'exists' do
@@ -33,21 +34,5 @@ RSpec.describe Player do
     expect(player.total_cost).to eq(36000000)
   end
 
-  it "can determine long term players" #long term is considered 24 months or more
-    team = Team.new("Dodgers", "Los Angeles")
-  
-  pry(main)> player_1 = Player.new("Michael Palledorous" , 1000000, 36)
-  pry(main)> player_2 = Player.new("Kenny DeNunez", 500000, 24)
-  pry(main)> player_3 = Player.new("Alan McClennan", 750000, 48)
-  pry(main)> player_4 = Player.new("Hamilton Porter", 100000, 12)
-
-  pry(main)> team.add_player(player_1)
-  pry(main)> team.add_player(player_2)
-  pry(main)> team.add_player(player_3)
-  pry(main)> team.add_player(player_4)
-
-
-
+  it "can determine long term players" #long term is considered over 24
 end
-
-#to run all test files in the spec directory, run rspec spec
