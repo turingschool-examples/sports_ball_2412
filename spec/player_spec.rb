@@ -17,9 +17,9 @@ RSpec.describe Player do
     expect(player.last_name).to eq("Palledorous")
   end
 
-  it 'has a contract' do
+  it 'has a monthly cost' do
     player = Player.new("Michael Palledorous", 1000000, 36)
-    expect(player.contract).to eq(1000000)
+    expect(player.monthly_cost).to eq(1000000)
   end
 
   it 'has a contract length' do
@@ -32,3 +32,5 @@ RSpec.describe Player do
     expect(player.total_cost).to eq(36000000)
   end
 end
+
+#to run all test files in the spec directory, run rspec spec
