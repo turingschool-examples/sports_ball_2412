@@ -188,7 +188,7 @@ describe Team do
       subject(:players_by_last_name) { team.players_by_last_name }
 
       it 'returns array of players sorted by last name' do
-        expect(team.players_by_last_name).to eq([fourth_player, first_player, third_player, second_player])
+        expect(team.players_by_last_name).to eq([second_player, third_player, first_player, fourth_player])
       end
     end
   end
