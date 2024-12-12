@@ -34,6 +34,5 @@ RSpec.describe Team do #RS remember cap RSpec
     expect(team.players).to eq([])
 
     #expect the team to have an empty array of players
-
   end
 end

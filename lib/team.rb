@@ -29,4 +29,24 @@ class Team
   def to_s
     "Team: #{@name}, Location: #{@location}"
   end
+
+  #develop method to determine all long term players
+  def long_term_players
+    @roster.select do |player|
+      player.contract_length > 24
+    end
+  end
+
+  #develop method to determine all short term players
+  def short_term_players
+    @roster.select do |player|
+      player.contract_length <= 24
+    end
+  end
+
+  def total_value
+    @roster.sum(&:total_cost)
+  end
 end
+
+#select methods is used to return a new array containing all elements of the original array for which the block returns a true value
