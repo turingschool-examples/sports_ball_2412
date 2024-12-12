@@ -22,10 +22,7 @@ class Team
     end
 
     def total_value
-        value = 0
-
-        @roster.each {|player| value += player.total_cost}
-        value
+        @roster.sum {|player| player.total_cost}
     end
 
     def details
