@@ -34,5 +34,12 @@ RSpec.describe Player do
     expect(player.total_cost).to eq(36000000)
   end
 
-  it "can determine long term players" #long term is considered over 24
+  it 'has a nickname' do
+    player = Player.new("Michael Palledorous", 1000000, 36)
+
+    player.set_nickname!("Squints")
+    #! destroy and replace the original value
+    expect(player.nickname).to eq("Squints")
+  end
+
 end

@@ -2,7 +2,7 @@ require 'rspec' #connect to rspec gem
 require './lib/player' #makes the player class available to the test
 
 class Player
-  attr_reader :first_name, :last_name, :monthly_cost, :contract_length 
+  attr_reader :first_name, :last_name, :monthly_cost, :contract_length, :nickname
   #makes these attributes readable by the test file SCOPE
   #behind the scenes  the attr_reader method creates a method that returns the value of the instance variable
 
@@ -18,6 +18,10 @@ class Player
   def total_cost
     @monthly_cost * @contract_length
   end
+
+  def set_nickname!(nickname)
+    @nickname = nickname
+  end 
 
   def to_s #overriding the to_s method to return a string. #to_s is a method that returns a string representation of an object
     "Name: #{@first_name} #{@last_name}, Monthly Cost: #{@monthly_cost}, Contract Length: #{@contract_length} months"
