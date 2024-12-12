@@ -4,7 +4,7 @@ require 'pry'
 
 # run rspec spec/team_spec.rb 
 
-RSpec.describe Team do
+RSpec.describe Team do #RS remember cap RSpec
   it 'exists' do
     team = Team.new("Dodgers", "Los Angeles") 
     #new instance of team class with 2 arguments
@@ -12,6 +12,17 @@ RSpec.describe Team do
     expect(team).to be_a Team
     #expect the team to be an instance of the team class
   end
+  
+  it 'has a roster' do
+    team = Team.new("Dodgers", "Los Angeles")
+    expect(team.roster).to eq([])
+  end
+
+  it 'have a player count' do
+    team = Team.new("Dodgers", "Los Angeles")
+    expect(team.player_count).to eq(0)
+  end
+  
 
   it 'has a name' do
     team = Team.new("Aberdeen", [])
